@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import VueRouter from 'vue-router'
+import firebase from 'firebase';
 
 import Home from './views/Home';
 import About from './views/About';
@@ -47,5 +48,7 @@ new Vue({
     // eslint-disable-next-line no-undef
     firebase.initializeApp(firebaseConfig);
     firebase.analytics;
+    
+    Vue.prototype.$firebase = firebase
   }
 }).$mount('#app')

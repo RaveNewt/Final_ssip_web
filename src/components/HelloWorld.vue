@@ -43,7 +43,6 @@
   </v-container>
 </template>
 <script>
-import firebase from 'firebase';
 const newLocal="HelloWorld";
 export default {
   name: newLocal,
@@ -61,7 +60,7 @@ export default {
         photo: this.img1,
         caption: this.caption        
       }
-      firebase.database().ref('PhotoGallery').push(post)
+      this.$firebase.database().ref('PhotoGallery').push(post)
       .then((response) => {
         // eslint-disable-next-line no-console
         console.log(response)
@@ -82,7 +81,7 @@ export default {
     },
     onUpload(){
       this.img1=null;
-      const storageRef=firebase.storage().ref(`${this.imageData.name}`).put(this.imageData);
+      const storageRef=this.$firebase.storage().ref(`${this.imageData.name}`).put(this.imageData);
       storageRef.on(`state_changed`,snapshot=>{
       this.uploadValue = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
         // eslint-disable-next-line no-console
