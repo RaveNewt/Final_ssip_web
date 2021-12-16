@@ -44,10 +44,8 @@
 </template>
 <script>
 import firebase from 'firebase';
-import "firebase/database";
-import"firebase/storage";
 export default {
-  name: "HelloWorld",
+  name: "Upload",
   
   data () {
     return {
