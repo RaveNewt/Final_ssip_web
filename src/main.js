@@ -5,6 +5,8 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import VueRouter from 'vue-router'
 import firebase from 'firebase';
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 import Home from './views/Home';
 import About from './views/About';
@@ -48,7 +50,10 @@ new Vue({
     // eslint-disable-next-line no-undef
     firebase.initializeApp(firebaseConfig);
     firebase.analytics;
+
+    Vue.use(VueAxios, axios)
     
     Vue.prototype.$firebase = firebase
+    Vue.prototype.$url = "https://ssipfinal.000webhostapp.com/"
   }
 }).$mount('#app')
