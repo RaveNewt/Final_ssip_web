@@ -44,7 +44,7 @@
 </template>
 <script>
 export default {
-  name: "HelloWorld",
+  name: "Upload",
   
   data () {
     return {
