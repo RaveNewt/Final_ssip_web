@@ -21,7 +21,7 @@ export default {
 
   components: {
     Header,
-    Footer
+    Footer,
   },
 
   data: () => ({
