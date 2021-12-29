@@ -3,9 +3,9 @@
     <v-container>
       <h2 class="text-center">Gallery</h2>
       <v-row>
-        <v-col v-for="item in items" :key="item.id" class="d-flex child-flex" cols="6" sm="4">
+        <v-col v-for="(item,index) in items" :key="item[index]" class="d-flex child-flex" cols="6" sm="4">
           <v-card flat tile class="d-flex">
-            <v-img :src="item.src" aspect-ratio="1" class="grey lighten-2">
+            <v-img :src="item.url" aspect-ratio="1" class="grey lighten-2">
               <template v-slot:placeholder>
                 <v-row class="fill-height ma-0" align="center" justify="center">
                   <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
@@ -24,45 +24,22 @@ export default {
   name: "Gallery",
   data() {
     return {
-      items: [
-        {
-          id: 1,
-          src: "https://images.unsplash.com/photo-1639425620091-312639de647d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-        },
-        {
-          id: 2,
-          src: "https://images.unsplash.com/photo-1639364617761-c01ba617a2de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-        },
-        {
-          id: 3,
-          src: require("../assets/images/img3.jpg")
-        },
-        {
-          id: 4,
-          src: require("../assets/images/img4.jpg")
-        },
-        {
-          id: 5,
-          src: require("../assets/images/img5.jpg")
-        },
-        {
-          id: 6,
-          src: require("../assets/images/img6.jpg")
-        },
-        {
-          id: 7,
-          src: require("../assets/images/img7.jpg")
-        },
-        {
-          id: 8,
-          src: require("../assets/images/img8.jpg")
-        },
-        {
-          id: 9,
-          src: require("../assets/images/img9.jpg")
-        }
-      ]
+      items:[]
     };
+  },methods: {
+    getList() {
+      this.axios.get(this.$url+"v1/images").then((response) => {
+        this.items = response.data.data;
+        // eslint-disable-next-line no-console
+        console.log(this.items)
+      }).catch(error => {
+        // eslint-disable-next-line no-console
+        console.log(error)
+      });
+    }
+  },
+  mounted(){
+    this.getList()
   }
 };
 </script>
