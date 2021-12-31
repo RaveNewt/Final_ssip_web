@@ -2,7 +2,6 @@
   <v-content>
     <Hero />
     <Gallery />
-    <LatestPost />
   </v-content>
 </template>
 
