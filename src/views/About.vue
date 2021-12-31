@@ -45,7 +45,7 @@ export default {
           id: 1,
           src: require("../assets/images/team2.jpeg"),
           name: 'Lexi Anugrah',
-          title: 'Team Leader'
+          title: 'Back-End'
         },
         {
           id: 2,
