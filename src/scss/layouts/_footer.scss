@@ -1,10 +1,13 @@
 // footer
 .v-footer {
   background: $white !important;
+  text-align: center;
+  padding: 0px 270px;
 
   .v-card__text {
     @media only screen and (max-width: 599px) { 
       padding: 16px 0;
+
     }
 
     .v-btn {

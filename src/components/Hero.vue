@@ -21,16 +21,16 @@ export default {
     return {
       items: [
         {
-          src: require("../assets/images/img-carousel1.jpg"),
-          title: "We are creative"
+          src: require("../assets/images/card1.jpg"),
+          title: "Gallery"
         },
         {
-          src: require("../assets/images/img-carousel2.jpg"),
-          title: "We are hard worker"
+          src: require("../assets/images/card2.jpg"),
+          title: "Team Work"
         },
         {
-          src: require("../assets/images/img-carousel3.jpg"),
-          title: "We are professional"
+          src: require("../assets/images/card3.jpg"),
+          title: "Design Quality"
         }
       ]
     };
