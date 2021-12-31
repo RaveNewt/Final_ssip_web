@@ -50,7 +50,11 @@ export default {
   },
   methods: {
     create () {
-      fetch(this.$url+"v1/image/create",{method:'POST',body:JSON.stringify({url:this.img1})
+      if(this.img1 == ""){
+        alert("Please choose a photo")
+        return
+      }
+      fetch(this.$url+"v1/image/create.php",{method:'POST',body:JSON.stringify({url:this.img1})
       }).then((json)=>{
         return json.json()
       }).then(() => {
