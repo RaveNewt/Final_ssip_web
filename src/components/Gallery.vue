@@ -28,7 +28,7 @@ export default {
     };
   },methods: {
     getList() {
-      this.axios.get(this.$url+"v1/images").then((response) => {
+      this.axios.get(this.$url+"v1/image.php").then((response) => {
         this.items = response.data.data;
         // eslint-disable-next-line no-console
         console.log(this.items)

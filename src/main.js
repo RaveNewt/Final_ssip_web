@@ -54,6 +54,6 @@ new Vue({
     Vue.use(VueAxios, axios)
     
     Vue.prototype.$firebase = firebase
-    Vue.prototype.$url = "https://ssipfinal.000webhostapp.com/"
+    Vue.prototype.$url = "http://athanatius.tech/"
   }
 }).$mount('#app')
